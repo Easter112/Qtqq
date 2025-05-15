@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/123.png</file>
+        <file>css/loginWidget.css</file>
+        <file>image/qqlogoclassic.png</file>
+        <file>image/skin.png</file>
+        <file>image/logo.png</file>
+        <file>css/registWidget.css</file>
+        <file>image/editHeadPicture.png</file>
+    </qresource>
+</RCC>
