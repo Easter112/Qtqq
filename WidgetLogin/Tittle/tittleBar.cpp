@@ -1,6 +1,6 @@
 ﻿#include "tittlebar.h"
 #include "ui_tittlebar.h"  // 注意：UI 文件生成的头文件
-#include "Utils/utils.h"
+#include "WidgetLogin/utils/utils.h"
 
 #include <QFile>
 #include <QColor>

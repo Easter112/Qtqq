@@ -1,6 +1,6 @@
 ﻿#include "modifypassword.h"
 #include "ui_modifypassword.h"
-#include "Utils/utils.h"
+#include "WidgetLogin/utils/utils.h"
 #include <QDebug>
 #include <QFile>
 

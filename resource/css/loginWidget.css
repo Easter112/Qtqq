@@ -20,7 +20,11 @@ QLineEdit:focus {
 }
 
 /* 登录按钮样式 */
-QPushButton#loginBtn {
+QPushButton#loginBtn,
+QPushButton#registBtn,
+QPushButton#backBtn,
+QPushButton#modifyBtn
+{
     background-color: #3498db;
     color: white;
     border: none;
@@ -29,11 +33,17 @@ QPushButton#loginBtn {
 }
 
 
-QPushButton#loginBtn:hover {
+QPushButton#loginBtn:hover,
+QPushButton#registBtn:hover,
+QPushButton#backBtn:hover,
+QPushButton#modifyBtn:hover{
     background-color: #2980b9;
 }
 
-QPushButton#loginBtn:pressed {
+QPushButton#loginBtn:pressed,
+QPushButton#registBtn:pressed,
+QPushButton#backBtn:pressed,
+QPushButton#modifyBtn:pressed{
     background-color: #1c638d;
 }
 

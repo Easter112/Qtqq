@@ -1,6 +1,6 @@
 ﻿#include "registwidget.h"
 #include "ui_registwidget.h"
-#include "Utils/utils.h"
+#include "WidgetLogin/utils/utils.h"
 #include <QStyle>
 #include <QFile>
 #include <QDebug>

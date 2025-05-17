@@ -3,9 +3,7 @@
 #include <QFile>
 #include <QSettings>
 #include <QDebug>
-#include <QtDebug>
-#include "formwork.h"
-#include "Utils/utils.h"
+#include "WidgetLogin/utils/utils.h"
 #include "DataBase/database.h"
 
 static Utils &utils = Utils::getInstance();
@@ -17,7 +15,6 @@ loginWidget::loginWidget(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QString passwd;
     connect(ui->loginBtn,&QPushButton::clicked,this,[=](){
 
         int account = ui->m_account->text().toUInt();
@@ -45,11 +42,6 @@ loginWidget::loginWidget(QWidget *parent)
 
     loadStyleSheet("loginWidget");
     ui->m_password->setEchoMode(QLineEdit::Password);
-
-    QPixmap pixmap(":/image/logo.png");
-    pixmap = pixmap.scaled(ui->label_2->width(),ui->label_2->height(),Qt::KeepAspectRatio,Qt::SmoothTransformation);
-
-    ui->label_2->setPixmap(pixmap);
 
     connect(ui->btn_regist,&QPushButton::clicked,this,[=](){
         qDebug() << "regist is clicked!";
@@ -82,11 +74,12 @@ void loginWidget::loadStyleSheet(const QString & sheetName)
         qssStyleSheet += QString("QWidget[bodySkin=true] {"
                                  "background-color: rgb(%1,%2,%3);"
                                  "border-top-left-radius: 4px;}"
-                                 "QWidget[tittleSkin=true] {"
-                                 "border-top: 1px solid rgba(%1,%2,%3,70);"
-                                 "background-color: rgba(%1,%2,%3,100);"
-                                 "border-bottom-left-radius: 4px;"
-                                 "border-bottom-right-radius: 4px;}").arg(r).arg(g).arg(b);
+                                 "QPushButton#headBtn {"
+                                 "background-color: rgb(%1, %2, %3);"
+                                 "color: white;"
+                                 "border: none;"
+                                 "border-radius: 6px;"
+                                 "font-weight: bold;})").arg(r).arg(g).arg(b);
         setStyleSheet(qssStyleSheet);
     }
     file.close();

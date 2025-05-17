@@ -1,0 +1,19 @@
+/* style.css */
+QWidget#widget_2,
+QWidget#widget
+{
+    background-color: black;
+}
+
+QPushButton {
+    background-color: transparent
+    border: black;
+}
+
+QPushButton:hover {
+    background-color: #333;
+}
+
+QPushButton:pressed {
+    background-color: #555;
+}

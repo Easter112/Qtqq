@@ -3,12 +3,12 @@
 #include <QtSql/QSqlError>
 #include <QDebug>
 #include <QtSql/QSqlQuery>
+#include <QApplication>
 
 #define DataBaseName "qq.db"
 
 DataBase::DataBase()
 {
-    initDataBase();
 }
 
 bool DataBase::ConnectToDataBase()
@@ -32,12 +32,20 @@ void DataBase::initDataBase()
     QString sql = "CREATE table users ";
     QSqlQuery query;
 
-    // 创建表（只需要建一次）
-    query.exec("CREATE TABLE IF NOT EXISTS users ("
-               "id INTEGER PRIMARY KEY,"
-               "name TEXT NOT NULL,"
-               "password TEXT NOT NULL,"
-               "status INTEGER DEFAULT 1 CHECK(status IN (1, 2, 3))");
+    bool success = query.exec(
+        "CREATE TABLE IF NOT EXISTS users ("
+        "id INTEGER PRIMARY KEY,"
+        "name TEXT NOT NULL,"
+        "password TEXT NOT NULL,"
+        "status INTEGER DEFAULT 1 CHECK(status IN (1, 2, 3)))"  // ✅ 加上结尾的右括号
+        );
+
+    if (!success) {
+        qDebug() << "创建 users 表失败:" << query.lastError().text();
+    } else {
+        qDebug() << "users 表创建成功或已存在";
+    }
+
 
     if(tableIsEmpty())
     {

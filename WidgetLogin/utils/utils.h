@@ -1,7 +1,7 @@
 ﻿#ifndef UTILS_H
 #define UTILS_H
 #include <QColor>
-
+#include <QPixmap>
 
 class Utils
 {
@@ -14,6 +14,8 @@ public:
 
     void setDefaultColor(const QColor &color);
     QColor getDefaultColor();
+    QPixmap createChatIcon();
+    QPixmap createUserIcon();
 
 
 private:

@@ -1,9 +1,9 @@
 ﻿#ifndef CENTERWIDGET_H
 #define CENTERWIDGET_H
 #include <QStackedLayout>
-#include "Body/login/loginwidget.h"
-#include "Body/regist/registwidget.h"
-#include "Body/modify/modifypassword.h"
+#include "WidgetLogin/Body/login/loginwidget.h"
+#include "WidgetLogin/Body/regist/registwidget.h"
+#include "WidgetLogin/Body/modify/modifypassword.h"
 
 #include <QWidget>
 

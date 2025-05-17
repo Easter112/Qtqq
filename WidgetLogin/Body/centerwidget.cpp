@@ -1,4 +1,4 @@
-﻿#include "Body/centerwidget.h"
+﻿#include "WidgetLogin/Body/centerwidget.h"
 #include "ui_centerwidget.h"
 
 centerWidget::centerWidget(QWidget *parent) :
@@ -37,7 +37,7 @@ void centerWidget::initConnect()
     connect(m_loginwidget, &loginWidget::disPlay, this, [=](int index){
         m_StackedLayout->setCurrentIndex(index);
         if(index == 1)
-            m_registWidget->loadStyleSheet("registWidget");
+            m_registWidget->loadStyleSheet("loginWidget");
         else
             m_modifyPassword->loadStyleSheet("loginWidget");
     });
@@ -49,8 +49,8 @@ void centerWidget::initConnect()
 
 void centerWidget::OnColorChange()
 {
-    m_registWidget->loadStyleSheet("registWidget");
-    m_modifyPassword->loadStyleSheet("registWidget");
+    m_registWidget->loadStyleSheet("loginWidget");
+    m_modifyPassword->loadStyleSheet("loginWidget");
     m_loginwidget->loadStyleSheet("loginWidget");
 }
 

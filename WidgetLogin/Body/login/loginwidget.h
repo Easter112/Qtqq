@@ -1,12 +1,11 @@
 ﻿#ifndef LOGINWIDGET_H
 #define LOGINWIDGET_H
-#include "mainApp/mainwindow.h"
 
 #include <QWidget>
 #include <QApplication>
 #include <QFile>
 #include <QStackedLayout>
-#include "Tittle/tittlebar.h"
+#include "WidgetLogin/Tittle/tittlebar.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class loginWidget; }

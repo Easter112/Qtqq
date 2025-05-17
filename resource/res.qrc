@@ -5,7 +5,8 @@
         <file>image/qqlogoclassic.png</file>
         <file>image/skin.png</file>
         <file>image/logo.png</file>
-        <file>css/registWidget.css</file>
         <file>image/editHeadPicture.png</file>
+        <file>css/contact.css</file>
+        <file>css/toolsBar.css</file>
     </qresource>
 </RCC>

@@ -2,8 +2,8 @@
 #define FORMWORK_H
 
 #include <QWidget>
-#include "Body/centerwidget.h"
-#include "Tittle/tittlebar.h"
+#include "WidgetLogin/Body/centerwidget.h"
+#include "WidgetLogin/Tittle/tittlebar.h"
 #include "baseframe.h"
 
 namespace Ui {
