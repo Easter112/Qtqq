@@ -8,5 +8,7 @@
         <file>image/editHeadPicture.png</file>
         <file>css/contact.css</file>
         <file>css/toolsBar.css</file>
+        <file>image/contactLogo.png</file>
+        <file>image/chatLogo.png</file>
     </qresource>
 </RCC>

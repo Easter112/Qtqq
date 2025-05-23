@@ -1,19 +1,23 @@
-/* style.css */
 QWidget#widget_2,
-QWidget#widget
-{
+QWidget#widget {
     background-color: black;
 }
 
 QPushButton {
-    background-color: transparent
-    border: black;
+    background-color: transparent;
+    border: 1px solid black;
 }
 
 QPushButton:hover {
     background-color: #333;
 }
 
+/* 选中状态（变蓝） */
+QPushButton:checked {
+    background-color: #07C160; /* 微信绿色（如果你想要蓝色，可以用 #1AAD19 或 #10AEFF） */
+}
+
+/* 按下状态（点击时加深颜色） */
 QPushButton:pressed {
-    background-color: #555;
+    background-color: #05A150; /* 比选中状态稍深的颜色 */
 }

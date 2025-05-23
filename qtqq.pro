@@ -25,9 +25,13 @@ SOURCES += \
     WidgetLogin/frame/baseframe.cpp \
     WidgetLogin/frame/formwork.cpp \
     WidgetLogin/utils/utils.cpp \
+    WidgetMain/framework/chatform.cpp \
     WidgetMain/framework/contactform.cpp \
     WidgetMain/framework/mainform.cpp \
     WidgetMain/mainApp/Contact/contact.cpp \
+    WidgetMain/mainApp/chatModule/communicate/message.cpp \
+    WidgetMain/mainApp/chatModule/send/sendmsg.cpp \
+    WidgetMain/mainApp/chatModule/topTittleBar/tittlebar.cpp \
     WidgetMain/mainApp/leftToolsBar/toolsbar.cpp \
     WidgetMain/mainApp/search/form.cpp \
     WidgetMain/utils/messageitemdelegate.cpp \
@@ -43,9 +47,13 @@ HEADERS += \
     WidgetLogin/frame/baseframe.h \
     WidgetLogin/frame/formwork.h \
     WidgetLogin/utils/utils.h \
+    WidgetMain/framework/chatform.h \
     WidgetMain/framework/contactform.h \
     WidgetMain/framework/mainform.h \
     WidgetMain/mainApp/Contact/contact.h \
+    WidgetMain/mainApp/chatModule/communicate/message.h \
+    WidgetMain/mainApp/chatModule/send/sendmsg.h \
+    WidgetMain/mainApp/chatModule/topTittleBar/tittlebar.h \
     WidgetMain/mainApp/leftToolsBar/toolsbar.h \
     WidgetMain/mainApp/search/form.h \
     WidgetMain/utils/messageitemdelegate.h
@@ -57,8 +65,13 @@ FORMS += \
     WidgetLogin/Body/regist/registwidget.ui \
     WidgetLogin/Tittle/tittlebar.ui \
     WidgetLogin/frame/formwork.ui \
+    WidgetMain/framework/chatform.ui \
     WidgetMain/framework/contactform.ui \
     WidgetMain/framework/mainform.ui \
+    WidgetMain/mainApp/chatDialog/chatdialog.ui \
+    WidgetMain/mainApp/chatModule/communicate/message.ui \
+    WidgetMain/mainApp/chatModule/send/sendmsg.ui \
+    WidgetMain/mainApp/chatModule/topTittleBar/tittlebar.ui \
     WidgetMain/mainApp/leftToolsBar/toolsbar.ui \
     WidgetMain/mainApp/search/form.ui
 

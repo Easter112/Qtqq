@@ -14,8 +14,6 @@ public:
 
     void setDefaultColor(const QColor &color);
     QColor getDefaultColor();
-    QPixmap createChatIcon();
-    QPixmap createUserIcon();
 
 
 private:

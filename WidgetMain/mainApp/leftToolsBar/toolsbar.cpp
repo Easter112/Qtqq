@@ -2,6 +2,8 @@
 #include "ui_toolsbar.h"
 #include <QFile>
 #include "WidgetLogin/utils/utils.h"
+#include <QDebug>
+#include <QButtonGroup>
 
 Utils &util = Utils::getInstance();
 
@@ -10,11 +12,17 @@ toolsBar::toolsBar(QWidget *parent)
     , ui(new Ui::toolsBar)
 {
     ui->setupUi(this);
-    ui->chatBtn->setIcon(QIcon(util.createChatIcon()));
-    ui->chatBtn->setIconSize(QSize(50, 50));
+    // 设置按钮为可切换
+    ui->chatBtn->setCheckable(true);
+    ui->contactBtn->setCheckable(true);
 
-    ui->contactBtn->setIcon(QIcon(util.createUserIcon()));
-    ui->contactBtn->setIconSize(QSize(50, 50));
+    // 创建按钮组，确保互斥选择
+    QButtonGroup *buttonGroup = new QButtonGroup(this);
+    buttonGroup->addButton(ui->chatBtn);
+    buttonGroup->addButton(ui->contactBtn);
+
+    // 默认选中第一个按钮（可选）
+    ui->chatBtn->setChecked(true);
 }
 
 toolsBar::~toolsBar()

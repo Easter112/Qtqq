@@ -96,11 +96,18 @@
           <height>50</height>
          </size>
         </property>
+        <property name="autoFillBackground">
+         <bool>true</bool>
+        </property>
         <property name="styleSheet">
          <string notr="true"/>
         </property>
         <property name="text">
          <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../../../resource/res.qrc">
+          <normaloff>:/image/chatLogo.png</normaloff>:/image/chatLogo.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -130,11 +137,18 @@
           <height>50</height>
          </size>
         </property>
+        <property name="autoFillBackground">
+         <bool>true</bool>
+        </property>
         <property name="styleSheet">
          <string notr="true"/>
         </property>
         <property name="text">
          <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../../../resource/res.qrc">
+          <normaloff>:/image/contactLogo.png</normaloff>:/image/contactLogo.png</iconset>
         </property>
         <property name="iconSize">
          <size>
