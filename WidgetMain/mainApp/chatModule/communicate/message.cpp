@@ -6,7 +6,12 @@ message::message(QWidget *parent) :
     ui(new Ui::message)
 {
     ui->setupUi(this);
+    ui->textEdit->setReadOnly(true);
+    ui->textEdit->viewport()->setCursor(Qt::ArrowCursor);
 }
+
+
+
 
 message::~message()
 {

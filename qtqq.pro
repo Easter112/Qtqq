@@ -2,7 +2,7 @@ QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++11
+CONFIG += c++14
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -31,10 +31,12 @@ SOURCES += \
     WidgetMain/mainApp/Contact/contact.cpp \
     WidgetMain/mainApp/chatModule/communicate/message.cpp \
     WidgetMain/mainApp/chatModule/send/sendmsg.cpp \
-    WidgetMain/mainApp/chatModule/topTittleBar/tittlebar.cpp \
+    WidgetMain/mainApp/chatModule/topTittleBar/toptittle.cpp \
+    WidgetMain/mainApp/chatwindow.cpp \
     WidgetMain/mainApp/leftToolsBar/toolsbar.cpp \
     WidgetMain/mainApp/search/form.cpp \
     WidgetMain/utils/messageitemdelegate.cpp \
+    WidgetMain/utils/windowbehaviour.cpp \
     main.cpp
 
 HEADERS += \
@@ -53,10 +55,12 @@ HEADERS += \
     WidgetMain/mainApp/Contact/contact.h \
     WidgetMain/mainApp/chatModule/communicate/message.h \
     WidgetMain/mainApp/chatModule/send/sendmsg.h \
-    WidgetMain/mainApp/chatModule/topTittleBar/tittlebar.h \
+    WidgetMain/mainApp/chatModule/topTittleBar/toptittle.h \
+    WidgetMain/mainApp/chatwindow.h \
     WidgetMain/mainApp/leftToolsBar/toolsbar.h \
     WidgetMain/mainApp/search/form.h \
-    WidgetMain/utils/messageitemdelegate.h
+    WidgetMain/utils/messageitemdelegate.h \
+    WidgetMain/utils/windowbehaviour.h
 
 FORMS += \
     WidgetLogin/Body/centerwidget.ui \
@@ -68,12 +72,13 @@ FORMS += \
     WidgetMain/framework/chatform.ui \
     WidgetMain/framework/contactform.ui \
     WidgetMain/framework/mainform.ui \
-    WidgetMain/mainApp/chatDialog/chatdialog.ui \
     WidgetMain/mainApp/chatModule/communicate/message.ui \
     WidgetMain/mainApp/chatModule/send/sendmsg.ui \
-    WidgetMain/mainApp/chatModule/topTittleBar/tittlebar.ui \
+    WidgetMain/mainApp/chatModule/topTittleBar/toptittle.ui \
+    WidgetMain/mainApp/chatwindow.ui \
+    WidgetMain/mainApp/contact/contact.ui \
     WidgetMain/mainApp/leftToolsBar/toolsbar.ui \
-    WidgetMain/mainApp/search/form.ui
+    WidgetMain/mainApp/search/form.ui \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -87,8 +92,22 @@ DISTFILES += \
     resource/css/loginWidget.css \
     resource/css/registWidget.css \
     resource/image/123.png \
+    resource/image/call.png \
+    resource/image/chatLogo.png \
+    resource/image/close.png \
+    resource/image/contactLogo.png \
+    resource/image/cut.png \
     resource/image/editHeadPicture.png \
+    resource/image/emotion.png \
+    resource/image/file.png \
     resource/image/headChange.png \
+    resource/image/info.png \
     resource/image/logo.png \
+    resource/image/max.png \
+    resource/image/message.png \
+    resource/image/min.png \
+    resource/image/newuser.png \
     resource/image/qqlogoclassic.png \
-    resource/image/skin.png
+    resource/image/restore.png \
+    resource/image/skin.png \
+    resource/image/video.png

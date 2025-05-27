@@ -15,6 +15,7 @@ class contactForm : public QWidget
 
 public:
     explicit contactForm(QWidget *parent = nullptr);
+    void changeContactWidget(int);
     ~contactForm();
 
 private:

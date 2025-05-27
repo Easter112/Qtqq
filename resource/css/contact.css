@@ -1,105 +1,42 @@
-/* :/css/contact.css */
-QTreeView {
-    background-color: #f5f7fa;
-    border: none;
-    outline: 0;
-    show-decoration-selected: 0;
+/* 全局树控件样式 */
+QTreeWidget {
+    background-color: #FFFFFF;  /* 背景色 */
+    outline: 0;                /* 去除焦点虚线框 */
+    border: 1px solid #E0E0E0; /* 边框 */
 }
 
-/* 分组项样式 */
-QStandardItem[data="true"] {
-    color: #5e6c84;
+/* 所有树项的通用样式 */
+QTreeWidget::item {
+    height: 45px;              /* 统一行高 */
+    padding-left: 10px;        /* 左侧缩进 */
+}
+
+/* 根项样式（更粗的字体） */
+QTreeWidget::item[level="0"] {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
     font-size: 14px;
-    padding: 8px 0 8px 5px;
-    border-bottom: 1px solid #dfe1e6;
-    background-color: #f5f7fa;
+    font-weight: 800;  /* 使用更重的字重（600=Semibold, 700=Bold, 800=Extra Bold） */
+    color: #333333;
+    background-color: #F5F5F5;
+    border-bottom: 1px solid #E0E0E0;
 }
 
-/* 联系人项通用样式 */
-QStandardItem {
-    min-height: 60px;
-    padding: 8px 12px;
-    border-bottom: 1px solid #ebecf0;
-    background-color: white;
-}
-
-/* 悬停效果 */
-QStandardItem:hover {
-    background-color: #f0f2f5;
-}
-
-/* 选中项效果 */
-QStandardItem:selected {
-    background-color: #e1f0ff;
-    border-left: 3px solid #1a73e8;
-}
-
-/* 头像样式 */
-QStandardItem[data^="avatar"] {
-    qproperty-iconSize: 40px;
-    border-radius: 20px;
-}
-
-/* 主标题文本 */
-QStandardItem[data^="title"] {
-    color: #172b4d;
-    font-size: 15px;
-    font-weight: 500;
-}
-
-/* 副标题文本 */
-QStandardItem[data^="subtitle"] {
-    color: #6b778c;
-    font-size: 13px;
-}
-
-/* 时间文本 */
-QStandardItem[data^="time"] {
-    color: #97a0af;
+/* 子项样式（常规粗细） */
+QTreeWidget::item[level="1"] {
+    font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
     font-size: 12px;
-    qproperty-alignment: AlignRight;
+    font-weight: 400;  /* 正常字重 */
+    color: #666666;
+    padding-left: 40px;
 }
 
-/* 未读红点 */
-QStandardItem[data^="unread"]::after {
-    content: "";
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 4px;
-    background-color: #ff5630;
-    margin-left: 5px;
-    vertical-align: middle;
+/* 鼠标悬停效果 */
+QTreeWidget::item:hover {
+    background-color: #E8F4FF;
 }
 
-/* 滚动条样式 */
-QScrollBar:vertical {
-    border: none;
-    background: #f5f7fa;
-    width: 8px;
-    margin: 0;
-}
-
-QScrollBar::handle:vertical {
-    background: #c1c7d0;
-    min-height: 20px;
-    border-radius: 4px;
-}
-
-QScrollBar::add-line:vertical,
-QScrollBar::sub-line:vertical {
-    height: 0;
-}
-
-/* 展开/折叠箭头 */
-QTreeView::branch {
-    image: none;
-}
-
-QTreeView::branch:has-children:!open {
-    image: url(:/image/arrow-right.svg);
-}
-
-QTreeView::branch:has-children:open {
-    image: url(:/image/arrow-down.svg);
+/* 选中项样式 */
+QTreeWidget::item:selected {
+    background-color: #D1E8FF;
+    color: #0066CC;
 }

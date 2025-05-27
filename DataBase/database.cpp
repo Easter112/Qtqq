@@ -129,6 +129,7 @@ int DataBase::IdReturn(const QString &name)
     else
     {
         qDebug() << "查询失败:" << query.lastError().text();
+        return -1;
 
     }
 }
@@ -155,7 +156,7 @@ bool DataBase::QueryData(int id,QString *password)
     else
     {
         qDebug() << "查询失败:" << query.lastError().text();
-
+        return false;
     }
 
 }

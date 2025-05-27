@@ -12,6 +12,13 @@ contactForm::contactForm(QWidget *parent)
     ui->searchLayout->addWidget(m_search);
     ui->personLayout->addWidget(m_contact);
 
+    m_search->loadStyleSheet("search");
+
+}
+
+void contactForm::changeContactWidget(int index)
+{
+    m_contact->changeWidget(index);
 }
 
 contactForm::~contactForm()

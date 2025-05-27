@@ -1,0 +1,90 @@
+QWidget#sendMsg {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e6e6e6;
+    border-top-right-radius: 40px;  /* 右上角圆角 */
+    border-top-left-radius: 0;      /* 左上角保持直角 */
+    border-bottom-right-radius: 0;  /* 右下角保持直角 */
+    border-bottom-left-radius: 0;   /* 左下角保持直角 */
+}
+
+
+/* 所有按钮的基础样式 */
+QPushButton {
+    background: transparent;
+    border: none;
+    min-width: 40px;
+    min-height: 40px;
+    padding: 0;
+}
+
+/* 普通按钮悬停效果 - 矩形 */
+#emoBtn:hover,
+#cutBtn:hover,
+#fileBtn:hover,
+#recordBtn:hover,
+#callBtn:hover,
+#videoBtn:hover{
+    background-color: #e6e6e6;
+    border-radius: 4px;  /* 矩形圆角 */
+}
+
+/* 普通按钮按下效果 */
+#emoBtn:pressed,
+#cutBtn:pressed,
+#fileBtn:pressed,
+#recordBtn:pressed,
+#callBtn:pressed,
+#videoBtn:pressed{
+    background-color: #d9d9d9;
+    border-radius: 4px;
+}
+
+/* 左侧按钮组 */
+#emoBtn, #emoBtn, #fileBtn,#callBtn,#videoBtn {
+    border-radius: 4px;  /* 默认矩形 */
+}
+#recordBtn{
+    border-radius: 4px;  /* 默认矩形 */
+}
+
+#sendBtn {
+    /* 基础样式 */
+    background-color: #1a73e8;  /* 蓝色背景 */
+    border: none;
+    border-radius: 4px;        /* 圆角 */
+    min-width: 80px;           /* 最小宽度 */
+    min-height: 40px;          /* 最小高度 */
+    color: white;              /* 文字颜色 */
+    padding: 5px 15px;         /* 内边距（上下，左右） */
+    margin-right: 10px;       /* 右边界10px */
+    
+    /* 文字样式 */
+    font-family: 'Microsoft YaHei';
+    font-size: 16px;
+}
+
+/* 悬停效果 */
+#sendBtn:hover {
+    background-color: #2a83f8;  /* 稍亮的蓝色 */
+}
+
+/* 按下效果（点击时变浅） */
+#sendBtn:pressed {
+    background-color: #0a63d8;  /* 更深的蓝色（模拟按下变浅） */
+    margin-right: 9px;          /* 微调右边界模拟按下效果 */
+    padding-right: 14px;        /* 微调内边距 */
+}
+
+/* 禁用状态 */
+#sendBtn:disabled {
+    background-color: #a0c4ff;  /* 浅灰色 */
+    color: #666666;
+}
+
+QTextEdit {
+    background-color: transparent;
+    font-family: 'Microsoft YaHei';
+    font-size: 18px;
+    border: none;                   /* 移除所有边框 */
+    outline: none;                  /* 移除焦点框 */
+}

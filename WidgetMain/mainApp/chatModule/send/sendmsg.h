@@ -13,6 +13,7 @@ class sendMsg : public QWidget
 
 public:
     explicit sendMsg(QWidget *parent = nullptr);
+    void loadStyleSheet(const QString &sheetName);
     ~sendMsg();
 
 private:

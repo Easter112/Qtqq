@@ -13,6 +13,7 @@ class Form : public QWidget
 
 public:
     explicit Form(QWidget *parent = nullptr);
+    void loadStyleSheet(const QString &sheetName);
     ~Form();
 
 private:

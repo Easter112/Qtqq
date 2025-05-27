@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>message</class>
- <widget class="QWidget" name="message">
+ <class>chatWindow</class>
+ <widget class="QWidget" name="chatWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>807</width>
+    <height>527</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,11 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QTextEdit" name="textEdit"/>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>-1</number>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>

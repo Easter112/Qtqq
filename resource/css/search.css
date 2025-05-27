@@ -1,0 +1,39 @@
+/* 搜索框整体样式保持不变 */
+QWidget#Form {
+    background-color: white;
+    border: none;
+}
+
+/* 输入框获得焦点时的效果 */
+QLineEdit#lineEdit:focus {
+    border: 1px solid #4CAF50;
+}
+
+/* 右侧按钮样式保持不变 */
+QPushButton#pushButton {
+    min-width: 24px;
+    max-width: 24px;
+    height: 24px;
+    margin-left: 8px;
+    border: none;
+    background-color: #eaeaea;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* 按钮悬停和按下效果保持不变 */
+QPushButton#pushButton:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+QPushButton#pushButton:pressed {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+QLineEdit#lineEdit {
+    /* 其他样式保持不变 */
+    background-color: #eaeaea;
+    background-repeat: no-repeat;
+    background-position: 6px center;
+    font: 14px "Microsoft YaHei";
+    padding-left: 10px;  /* 为图标留出空间 */
+}

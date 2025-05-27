@@ -7,11 +7,23 @@
 
 Utils &util = Utils::getInstance();
 
-toolsBar::toolsBar(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::toolsBar)
+toolsBar::toolsBar(QWidget *parent) :
+    QWidget(parent),
+    ui(new Ui::toolsBar)
 {
     ui->setupUi(this);
+    initControl();
+    initConnect();
+
+}
+
+toolsBar::~toolsBar()
+{
+    delete ui;
+}
+
+void toolsBar::initControl()
+{
     // 设置按钮为可切换
     ui->chatBtn->setCheckable(true);
     ui->contactBtn->setCheckable(true);
@@ -25,9 +37,10 @@ toolsBar::toolsBar(QWidget *parent)
     ui->chatBtn->setChecked(true);
 }
 
-toolsBar::~toolsBar()
+void toolsBar::initConnect()
 {
-    delete ui;
+    connect(ui->contactBtn,&QPushButton::clicked,this,&toolsBar::signalContact);
+    connect(ui->chatBtn,&QPushButton::clicked,this,&toolsBar::signalChat);
 }
 
 void toolsBar::loadStyleSheet(const QString &sheetName)
@@ -45,3 +58,6 @@ void toolsBar::loadStyleSheet(const QString &sheetName)
         qWarning() << "Failed to open stylesheet:" << file.fileName();
     }
 }
+
+
+
