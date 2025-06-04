@@ -13,10 +13,12 @@ class message : public QWidget
 
 public:
     explicit message(QWidget *parent = nullptr);
+    QString& LoadInitText();
     ~message();
 
 private:
     Ui::message *ui;
+    QString html;
 };
 
 #endif // MESSAGE_H

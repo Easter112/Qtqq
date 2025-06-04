@@ -14,6 +14,10 @@ class sendMsg : public QWidget
 public:
     explicit sendMsg(QWidget *parent = nullptr);
     void loadStyleSheet(const QString &sheetName);
+    void keyPressEvent(QKeyEvent *event) override;
+    bool eventFilter(QObject *watched, QEvent *event) override;
+    void initControl();
+    void initConnect();
     ~sendMsg();
 
 private:

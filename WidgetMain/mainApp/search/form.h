@@ -12,7 +12,10 @@ class Form : public QWidget
     Q_OBJECT
 
 public:
+
     explicit Form(QWidget *parent = nullptr);
+    void initControl();
+    void initConnect();
     void loadStyleSheet(const QString &sheetName);
     ~Form();
 

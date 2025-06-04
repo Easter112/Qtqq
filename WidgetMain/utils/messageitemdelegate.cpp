@@ -80,9 +80,10 @@ void MessageItemDelegate::paint(QPainter *p, const QStyleOptionViewItem &opt, co
 
 QSize MessageItemDelegate::sizeHint(const QStyleOptionViewItem &option, const QModelIndex &index) const
 {
+    QRect r = option.rect;
     bool isGroup = index.data(Qt::UserRole + 99).toBool();
     if (isGroup) {
-        return QSize(200, 80);  // 分组项高度小一点
+        return QSize(r.right() - r.left(), 80);  // 分组项高度小一点
     }
-    return QSize(200, 80);      // 消息项高度
+    return QSize(r.right() - r.left(), 80);      // 消息项高度
 }

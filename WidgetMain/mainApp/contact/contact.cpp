@@ -9,6 +9,7 @@
 #include <QDebug>
 #include "ui_contact.h"
 #include "WidgetMain/utils/messageitemdelegate.h"
+#include "WidgetMain/utils/CustomTreeDelegate.h"
 static const int itemHeight = 80;
 
 Contact::Contact(QWidget *parent) :
@@ -67,19 +68,31 @@ auto Contact::addListItem(const QString& iconPath, const QString& text,
 void Contact::initConnect()
 {
     connect(this,&Contact::itemClicked,this,[=](const QModelIndex &index){
-    bool showReadDot = index.data(Qt::UserRole + 5).toBool();
+        bool showRedDot = index.data(Qt::UserRole + 5).toBool();
+        if (showRedDot)
+        {
+            // 使用index.row() 获取当前项的指针 QListWidgetItem *item(int row) const
+            QListWidgetItem* item = ui->chatListWidget->item(index.row());
 
-    if(showReadDot)
-    {
-        QString iconPath = index.data(Qt::UserRole + 1).toString();
-        QString text = index.data(Qt::UserRole + 2).toString();
-        QString time = index.data(Qt::UserRole + 4).toString();
-        qDebug() << iconPath;
+            if (item)
+            {
+                // 将红点状态设置为false
+                item->setData(Qt::UserRole + 5, false);
+                ui->chatListWidget->update(index);
+            }
+        }
+    });
 
-        addListItem(iconPath,text,time,false);
-    }
-    else
-        return ;
+    connect(ui->contactTreeWidget,&QTreeWidget::itemClicked,this,[=](QTreeWidgetItem *item){
+        if(item->data(0,Qt::UserRole + 1).toInt() == 0)   //根据层级关系  0代表根项
+        {
+            if(!item->isExpanded())
+                item->setExpanded(true);
+            else
+            {
+                item->setExpanded(false);
+            }
+        }
     });
 }
 
@@ -93,7 +106,7 @@ bool Contact::eventFilter(QObject *watched, QEvent *event)
 
             if (!index.isValid()) return false;  // 点击空白区域不处理
 
-            // 获取点击项的矩形区域（与paint()中一致）
+            // 获取点击项的矩形区域
             QRect itemRect = ui->chatListWidget->visualRect(index);
             if(itemRect.contains(mouseEvent->pos()))
             {
@@ -110,7 +123,7 @@ void Contact::addTreeItem(QTreeWidgetItem *parent, const QString &text, const QS
         QTreeWidgetItem* item = new QTreeWidgetItem(parent);
         item->setText(0, text);
         item->setSizeHint(0,QSize(ui->chatListWidget->width(), itemHeight));
-        // 设置图标（如果提供了路径）
+        // 设置图标
         if (!iconPath.isEmpty()) {
             item->setIcon(0, QIcon(iconPath));
         }
@@ -131,10 +144,9 @@ void Contact::addTreeItem(QTreeWidgetItem *parent, const QString &text, const QS
 auto Contact::addTreeRootItem(const QString &text, const QFont &font)
 {
         QTreeWidgetItem* item = new QTreeWidgetItem();
-        item->setSizeHint(0,QSize(ui->chatListWidget->width(), itemHeight));
-        item->setText(0, text);
+        item->setSizeHint(0,QSize(ui->chatListWidget->width(), itemHeight - 30));
         item->setFont(0, font);
-        item->setData(0, Qt::UserRole + 1, 0); // 标记为顶层
+        item->setData(0, Qt::UserRole + 1, text); // 标记为顶层
         ui->contactTreeWidget->addTopLevelItem(item);
         return item;
 }
@@ -145,9 +157,16 @@ void Contact::initContactTreeWidget()
 
     // 初始化树形列表
     ui->contactTreeWidget->setHeaderHidden(true);
-    ui->contactTreeWidget->setIconSize(QSize(40,40));
+    ui->contactTreeWidget->setIconSize(QSize(60,40));
+    ui->contactTreeWidget->setItemDelegate(new CustomTreeDelegate(ui->contactTreeWidget));
     auto rootItem = addTreeRootItem("群聊");
+
     addTreeItem(rootItem,"技术交流群",":/image/logo.png");
+
+    auto contactRootItem = addTreeRootItem("联系人");
+    addTreeItem(contactRootItem,"果果",":/image/logo.png");
+
+    ui->contactTreeWidget->setIndentation(0);
 
     ui->contactTreeWidget->expandAll();
 
@@ -157,19 +176,10 @@ void Contact::initContactTreeWidget()
 
 void Contact::initChatListWidget()
 {
-    // 设置列表控件属性
-    ui->chatListWidget->setViewMode(QListView::ListMode);
-    ui->chatListWidget->setIconSize(QSize(50, 50));
-    ui->chatListWidget->setWordWrap(true);
 
     // 设置自定义委托
     MessageItemDelegate* delegate = new MessageItemDelegate(ui->chatListWidget);
     ui->chatListWidget->setItemDelegate(delegate);
-
-    // 布局控制
-    ui->chatListWidget->setGridSize(QSize(-1, 60)); // 高度与委托中定义的60一致
-    ui->chatListWidget->setUniformItemSizes(true);
-    ui->chatListWidget->setResizeMode(QListView::Adjust);
 
     // 样式表
     ui->chatListWidget->setStyleSheet("QListWidget::item { padding: 8px 0; }");

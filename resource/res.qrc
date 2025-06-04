@@ -27,5 +27,8 @@
         <file>image/new.png</file>
         <file>css/search.css</file>
         <file>image/search.png</file>
+        <file>image/arrow-down.png</file>
+        <file>image/arrow-right.png</file>
+        <file>html/test.html</file>
     </qresource>
 </RCC>

@@ -8,6 +8,18 @@ Form::Form(QWidget *parent)
     , ui(new Ui::Form)
 {
     ui->setupUi(this);
+    initControl();
+    initConnect();
+}
+
+void Form::initControl()
+{
+
+}
+
+void Form::initConnect()
+{
+
 }
 
 Form::~Form()

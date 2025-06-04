@@ -2,7 +2,7 @@ QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-CONFIG += c++14
+CONFIG += c++17
 
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
@@ -35,6 +35,7 @@ SOURCES += \
     WidgetMain/mainApp/chatwindow.cpp \
     WidgetMain/mainApp/leftToolsBar/toolsbar.cpp \
     WidgetMain/mainApp/search/form.cpp \
+    WidgetMain/utils/CustomTreeDelegate.cpp \
     WidgetMain/utils/messageitemdelegate.cpp \
     WidgetMain/utils/windowbehaviour.cpp \
     main.cpp
@@ -59,6 +60,7 @@ HEADERS += \
     WidgetMain/mainApp/chatwindow.h \
     WidgetMain/mainApp/leftToolsBar/toolsbar.h \
     WidgetMain/mainApp/search/form.h \
+    WidgetMain/utils/CustomTreeDelegate.h \
     WidgetMain/utils/messageitemdelegate.h \
     WidgetMain/utils/windowbehaviour.h
 
